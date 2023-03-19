@@ -46,7 +46,7 @@ header {
               padding-left: 15px;
              margin-left: 15px;
              float: right;
-            font-style: italic;
+             font-family: 'Courier New', Courier, monospace;
              background-color: beige;
             }
 
@@ -84,7 +84,7 @@ header {
     <h1 class="center" style="color:deepskyblue">Requests Page For Suzi's Bakeshop!</h1>
 
     <aside>
-        <p>Any special Requests due to Allergies, please inform us ASAP!</p>
+        <p><b>Any special Requests due to Allergies, please inform us ASAP!</p></b>
         </aside>
 
         <main>
@@ -92,6 +92,27 @@ header {
             <p>Please contact us at 513-999-2323. We please ask that you order a week in advance for orders over 50.</p>
 
         </main>
+         
+         <!-- This is my HTML code below for my request list/submit option-->
+
+        <label for="requests">Request an item here:</label>
+
+       <select id="requests">
+        <option value="cookies">10 Chocolate/Vanilla Cookies</option>
+        <option value="cookies">20 Chocolate/Vanilla Cookies</option>
+        <option value="cookies">50 Chocolate/Vanila Cookies</option>
+        <option value="cupcakes">10 Chocolate/Vanilla Cupcakes</option>
+        <option value="cupcakes">20 Chocolate/Vanilla Cupcakes</option>
+        <option value="cupcakes">50 Chocolate/Vanilla Cupcakes</option>
+      <option value="ice cream cake">Ice Cream Cake</option>
+      <option value="muffins">10 Chocolate/Peanut Butter Muffins</option>
+      <option value="muffins"> 20 Chocolate/Peanut Butter Muffins</option>
+      <option value="muffins"> 50 Chocolate/Peanut Butter Muffins</option>
+</select>
+
+    <br><br>
+    <input type="submit" value="Submit">
+    </form>
 </body>
 
 <footer style="text-align: center">
