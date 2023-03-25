@@ -54,33 +54,44 @@
             <p>Please contact us at 513-999-2323 for any questions. We please ask that you order an week in advance for orders over 50.</p>
 
            
-            <form>
-                <label for="">First Name:</label>
-                <input type="text">
+            <form action="mailto.suzi@suzisbakeship.com?subject=Baked%20Goods%20Request" method="POST">
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName"/>
                 <br>
-                <label for="">Last Name:</label>
-                <input type="text">
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName"/>
                 <br>
-                
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email">
+                <br>
                 <label for="">Requested Menu Item:</label>
-                <select name="" id="">
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
+                <select name="menu-choice" id="menu-choice">
+                    <option id="Cookies" value="Cookies">Cookies</option>
+                    <option id="Cupcakes" value="Cupcakes">Cupcakes</option>
+                    <option id="Ice Cream Cake" value="Ice Cream Cake">Ice Cream Cake</option>
+                    <option id="Muffins" value="Muffins">Muffins</option>
+                    <option id="Lemonade" value="Lemonade">Lemonade</option>
+                    
                 </select>
+
+                <div class = "menu-option">
+                    <img src=""/>
+                    <p class="desc"></p>
+                </div>
         </main>
          
          <!-- This is my HTML code below for my request list/submit option-->
 
         
-</select>
+
 
     <br><br>
-    <input type="submit" value="Submit">
+    <input type="submit" id="submit" name="Submit">
     </form>
 </body>
 <script>
 window.addEventListener("DOMContentLoaded", function(e) {
+const order= localStorage.getItem("order");
 const bakeryRequest = JSON.parse(order); // turn the JSON string into an object
 const menuOption = document.querySelector(".menu-option");
 
@@ -91,7 +102,7 @@ const choiceId = bakeryRequest.id;
 const dropdownChoices = document.querySelectorAll("option");
 dropdownChoices.forEach(function(dropdownChoice) {
 
-    if (dropdownChoice.id == choiceId) {
+    if (dropdownChoice.id === choiceId) {
 
         dropdownChoice.selected = true;
 
@@ -99,7 +110,7 @@ dropdownChoices.forEach(function(dropdownChoice) {
 });
 
 const img = menuOption.querySelector("img");
-img.setAttribute("src", '../images/${choiceId}.jpg');
+img.setAttribute("src", `../images/${choiceId}.jpg`);
 img.setAttribute("alt", bakeryRequest.title);
 
 
