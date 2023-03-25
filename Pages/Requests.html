@@ -76,6 +76,42 @@
     <input type="submit" value="Submit">
     </form>
 </body>
+<script>
+window.addEventListener("DOMContentLoaded", function(e) {
+const bakeryRequest = JSON.parse(order); // turn the JSON string into an object
+const menuOption = document.querySelector(".menu-option");
+
+const desc = menuOption.querySelector(".desc");
+desc.innerText = bakeryRequest.title;
+
+const choiceId = bakeryRequest.id;
+const dropdownChoices = document.querySelectorAll("option");
+dropdownChoices.forEach(function(dropdownChoice) {
+
+    if (dropdownChoice.id == choiceId) {
+
+        dropdownChoice.selected = true;
+
+    }
+});
+
+const img = menuOption.querySelector("img");
+img.setAttribute("src", '../images/${choiceId}.jpg');
+img.setAttribute("alt", bakeryRequest.title);
+
+
+}
+
+
+
+
+
+
+
+
+
+
+</script>
 
 <footer style="text-align: center">
     <p style="font-size: 8px">Ike Okafor | March 2023</p>
